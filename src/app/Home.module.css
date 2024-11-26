@@ -1,0 +1,67 @@
+.container {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    color: #333333;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 10px 20px;
+  }
+  
+  .headerLeft {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .button {
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+
+  .user_add_button {
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+  
+  .main {
+    margin-top: 70px;
+    padding: 20px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .th,
+  .td {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .footer {
+    background-color: #333333;
+    color: #FFFFFF;
+    padding: 20px;
+    text-align: center;
+  }
