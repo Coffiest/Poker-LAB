@@ -18,7 +18,7 @@ interface User {
   id: string;
   name: string;
   chips: number;
-  rank: number;
+  rank?: number;
   password: string;
 }
 
@@ -27,11 +27,12 @@ const Home: React.FC = () => {
 
   const fetchUsers = async () => {
     const userCollection = collection(db, "users");
-    const userQuery = query(userCollection, orderBy("rank"));
+    const userQuery = query(userCollection, orderBy("chips", "desc"));
     const userSnapshot = await getDocs(userQuery);
-    const userList = userSnapshot.docs.map((doc) => ({
+    const userList = userSnapshot.docs.map((doc, index) => ({
       id: doc.id,
       ...doc.data(),
+      rank: index + 1, // ランキングを設定
     })) as User[];
     setUsers(userList);
   };
@@ -90,7 +91,7 @@ const Home: React.FC = () => {
       return;
     }
 
-    await addDoc(collection(db, "users"), { name, chips, rank: 0, password });
+    await addDoc(collection(db, "users"), { name, chips, password });
     fetchUsers();
   };
 
@@ -102,7 +103,7 @@ const Home: React.FC = () => {
     <div className={styles.container}>
       <header className={styles.header}>
         <div className={styles.headerLeft}>Poker Labo</div>
-        <button className={styles.user_add_button} onClick={addUser}>
+        <button className={styles.button} onClick={addUser}>
           ユーザーを追加
         </button>
       </header>
