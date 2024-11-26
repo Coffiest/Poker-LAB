@@ -3,7 +3,7 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBn77hs3...",
+  apiKey: process.env.NEXT_PUBLIC_APIKEY,
   authDomain: "poker-lab-app.firebaseapp.com",
   projectId: "poker-lab-app",
   storageBucket: "poker-lab-app.appspot.com",
